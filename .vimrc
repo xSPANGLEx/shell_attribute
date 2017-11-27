@@ -100,3 +100,5 @@ let g:syntastic_check_on_wq = 0
 
 set syntax=markdown
 au BufRead,BufNewFile *.md set filetype=markdown
+
+noremap <C-l> :SyntasticCheck <CR>
