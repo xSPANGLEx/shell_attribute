@@ -3,6 +3,7 @@ set tabstop=4
 set autoindent
 set expandtab
 set shiftwidth=4
+let $PATH = "~/.pyenv/shims:".$PATH
 
 "Plugins initilize
 if has('vim_starting')
@@ -30,6 +31,17 @@ NeoBundle 'vim-scripts/vim-auto-save'
 NeoBundle 'davidhalter/jedi-vim'
 
 NeoBundle 'scrooloose/syntastic'
+
+NeoBundleLazy "lambdalisue/vim-django-support", {
+      \ "autoload": {
+      \   "filetypes": ["python", "python3", "djangohtml"]
+      \ }}
+
+NeoBundleLazy "lambdalisue/vim-pyenv", {
+      \ "depends": ['davidhalter/jedi-vim'],
+      \ "autoload": {
+      \   "filetypes": ["python", "python3", "djangohtml"]
+      \ }}
 
 call neobundle#end()
 
